@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaoyu Ma · LLM Reliability &amp; Evaluation · NUS / Notre Dame</title>
+  <meta name="description" content="Homepage of Xiaoyu Ma: research on the reliability and evaluation of large language, agent, and multimodal models.">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/style.css">
+  <!-- Add Scholar / ORCID / OpenReview URLs to sameAs once those profiles exist. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Xiaoyu Ma",
+      "affiliation": [
+        {"@type": "CollegeOrUniversity", "name": "National University of Singapore"},
+        {"@type": "CollegeOrUniversity", "name": "University of Notre Dame"}
+      ],
+      "sameAs": ["https://github.com/JijiKing-Sam"]
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Icon set: Feather (MIT). Paths are inlined so the page needs no external requests. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+  </svg>
+
+  <header class="masthead">
+    <div class="masthead-inner">
+      <a class="site-title" href="#">Xiaoyu Ma</a>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- Photo: to be added (real photo, ≤200 KB, with alt text). No placeholder until then. -->
+      <h1 class="author-name">Xiaoyu Ma</h1>
+      <p class="author-bio">M.Sc. Student, NUS<br>Remote Research Intern, Yes Lab, University of Notre Dame</p>
+      <ul class="author-links">
+        <li><svg class="icon"><use href="#i-mail"/></svg><a href="#contact">Email</a></li>
+        <li><svg class="icon"><use href="#i-github"/></svg><a href="https://github.com/JijiKing-Sam">GitHub</a></li>
+        <!-- To add when ready: CV (public version), Google Scholar, ORCID, OpenReview -->
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I am an M.Sc. student in Digital Financial Technology at the <a href="https://www.nus.edu.sg/">National University of Singapore</a> (School of Computing) and a research intern at the <a href="https://www.nd.edu/">University of Notre Dame</a>, working with <a href="https://jasonzhangzy1757.github.io/">Zheyuan Zhang</a> and <a href="http://yes-lab.org/">Prof. Yanfang (Fanny) Ye</a>.</p>
+        <p>I work on the reliability and evaluation of large language models, agents, and multimodal models, and I have hands-on experience building efficient model architectures and inference systems. My work so far falls into two threads:</p>
+        <ul>
+          <li><strong>Reliability and evaluation</strong>: how compositional cues such as role labels and prompts shift vision-language models' judgments (<a href="#pub-binding">preprint</a>); how the point where a benchmark draws its &ldquo;post-call&rdquo; boundary changes labels and reported errors (<a href="#pub-icaif">ICAIF'26</a>).</li>
+          <li><strong>Efficient architectures and inference</strong>: depth-axis state space duality for transformers (<a href="#pub-colm">COLM'26</a>); inference-only acceleration for released vision-language-action checkpoints, without retraining (<a href="#pub-blurr">WWW'26 Demo</a>).</li>
+        </ul>
+        <p>I am applying to Ph.D. programs for Fall 2027.</p>
+      </section>
+
+      <section id="news">
+        <h2>🔥 News</h2>
+        <ul>
+          <li><strong>[2026.11]</strong> Our ICAIF 2026 paper on benchmark timing in earnings-call NLP is published in the ACM proceedings (<a href="https://doi.org/10.1145/3858063.3858902">DOI</a>).</li>
+          <li><strong>[2026.10]</strong> Preprint <a href="https://arxiv.org/abs/2610.28843">Beyond Correct Answers</a> is on arXiv.</li>
+          <li><strong>[2026.08]</strong> PCK-RL, a framework that combines VLMs and RL for robotic manipulation, is published in IEEE TII.</li>
+          <li><strong>[2026.07]</strong> DepthSSD is accepted to COLM 2026.</li>
+          <li><strong>[2025.07]</strong> Joined Yes Lab at the University of Notre Dame as a remote research intern.</li>
+        </ul>
+      </section>
+
+      <section id="publications">
+        <h2>📚 Publications</h2>
+        <p class="pub-note">* Equal contribution.</p>
+
+        <h3>Peer-reviewed</h3>
+        <ul class="pubs">
+          <li class="pub" id="pub-icaif">
+            <span class="venue">ICAIF '26</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1145/3858063.3858902">When Does &ldquo;Post-Call&rdquo; Begin? An Availability Contract for Earnings-Call NLP Benchmarks</a></p>
+              <p class="pub-authors"><strong>Xiaoyu Ma</strong>, Kelvin J.L. Koa, Yuncong Liu, Ke-Wei Huang</p>
+              <p class="pub-meta">7th ACM International Conference on AI in Finance (ICAIF '26) &middot; <a href="https://doi.org/10.1145/3858063.3858902">DOI</a> &middot; <a href="https://arxiv.org/abs/2610.21659">arXiv</a></p>
+              <p class="pub-role">Shows that where earnings-call benchmarks place the &ldquo;post-call&rdquo; boundary changes labels and reported errors, and proposes an availability contract for building such benchmarks. My role: first author; led the project.</p>
+            </div>
+          </li>
+          <li class="pub" id="pub-colm">
+            <span class="venue">COLM '26</span>
+            <div>
+              <p class="pub-title"><a href="https://openreview.net/forum?id=vnAuODxxI8">DepthSSD: Rethinking Residual Connections via State Space Models on the Depth Axis</a></p>
+              <p class="pub-authors">Zhengqing Yuan, <strong>Xiaoyu Ma</strong>, Yunhong He, Zhengtao Yao, Lichao Sun, Yanfang Ye</p>
+              <p class="pub-meta">Conference on Language Modeling (COLM 2026) &middot; <a href="https://openreview.net/forum?id=vnAuODxxI8">OpenReview</a></p>
+              <p class="pub-role">My role: implementation and the experimental pipeline.</p>
+            </div>
+          </li>
+          <li class="pub" id="pub-blurr">
+            <span class="venue">WWW '26 Demo</span>
+            <div>
+              <p class="pub-title">BLURR: A Boosted Low-Resource Inference for Vision-Language-Action Model</p>
+              <p class="pub-authors"><strong>Xiaoyu Ma</strong>*, Zhengqing Yuan*, Zheyuan Zhang, Kaiwen Shi, Lichao Sun, Yanfang Ye</p>
+              <p class="pub-meta">The Web Conference 2026 (WWW '26), Demo Track &middot; <a href="https://github.com/JijiKing-Sam/BLURR-A-Boosted-Low-Resource-Inference-for-Vision-Language-Action-Model">Code</a></p>
+              <p class="pub-role">An inference-only stack (BF16 execution, graph compilation, prefix KV caching, fewer decoding steps) that lowers per-step latency of released VLA checkpoints without retraining. My role: led the project end to end, from system design and implementation to experiments and the demo.</p>
+            </div>
+          </li>
+          <li class="pub" id="pub-tii">
+            <span class="venue">TII '26</span>
+            <div>
+              <p class="pub-title"><a href="https://doi.org/10.1109/TII.2026.3686601">PCK-RL: A Unified Framework for Vision-Language Model and Reinforcement Learning-Based Robotic Manipulation</a></p>
+              <p class="pub-authors">Qianxi Li, Hongze Fu, Zhenyu Li, Yong Song, Chengjin Zhang, <strong>Xiaoyu Ma</strong>, Bao Pang</p>
+              <p class="pub-meta">IEEE Transactions on Industrial Informatics, 22(8):7472&ndash;7483, 2026 &middot; <a href="https://doi.org/10.1109/TII.2026.3686601">DOI</a></p>
+              <p class="pub-role">A VLM splits a long-horizon task into keypoint-level subtasks, a locator grounds each keypoint in 3D, and an RL policy executes it. My role, over about ten months as a research assistant: proposed the PCA step of the keypoint locator (adapted from methods I knew from finance; it lets a 2D-only VLM choose keypoints on 3D objects), implemented parts of the core code, and took part in most experiments, from RL training and ablations in ManiSkill3 to real-robot trials on a UR5 arm.</p>
+            </div>
+          </li>
+        </ul>
+
+        <h3>Preprints</h3>
+        <ul class="pubs">
+          <li class="pub" id="pub-binding">
+            <span class="venue">Preprint</span>
+            <div>
+              <p class="pub-title"><a href="https://arxiv.org/abs/2610.28843">Beyond Correct Answers: How Compositional Cues Shape Visual Judgments</a></p>
+              <p class="pub-authors"><strong>Xiaoyu Ma</strong>, Zheyuan Zhang, Kaiwen Shi, Yanfang Ye</p>
+              <p class="pub-meta">arXiv:2610.28843, 2026 &middot; Under review</p>
+              <p class="pub-role">Holds the image and proposition fixed and changes only role labels and prompts, across 10 vision-language models and 6 tasks. My role: first author.</p>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section id="experience">
+        <h2>💻 Research Experience</h2>
+        <div class="entry">
+          <p><strong>University of Notre Dame</strong>, USA &mdash; Remote Research Intern, Yes Lab</p>
+          <p class="entry-sub">Jul. 2025 &ndash; present &middot; advised by Prof. Yanfang Ye</p>
+        </div>
+        <div class="entry">
+          <p><strong>National University of Singapore</strong>, Asian Institute of Digital Finance &mdash; Research Intern (Capstone Project)</p>
+          <p class="entry-sub">May 2026 &ndash; Oct. 2026 &middot; advised by Prof. Ke-Wei Huang</p>
+        </div>
+        <div class="entry">
+          <p><strong>Shandong University</strong>, China &mdash; Research Assistant</p>
+          <p class="entry-sub">Sep. 2024 &ndash; Jul. 2025 &middot; advised by Dr. Bao Pang and Prof. Runtao Yang</p>
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>📖 Education</h2>
+        <ul class="plain">
+          <li>2025.08 &ndash; 2027.01 (expected), M.Sc. in Digital Financial Technology, National University of Singapore</li>
+          <li>2021.09 &ndash; 2025.06, B.Econ. in Finance, Shandong University</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>📢 Contact</h2>
+        <ul>
+          <li>Email: laockets [at] gmail [dot] com</li>
+        </ul>
+        <p>Feel free to reach out via email if you are interested in my research or potential collaborations.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Xiaoyu Ma &middot; Last updated November 2026</p>
+  </footer>
+</body>
+</html>

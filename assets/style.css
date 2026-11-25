@@ -1,0 +1,187 @@
+/* Single-page academic homepage.
+   Layout idea (left profile column + one content column) follows the AcademicPages look;
+   markup and CSS are written from scratch, no framework, no build step. */
+
+:root {
+  --text: #494e52;
+  --muted: #7a8288;
+  --link: #237a94;
+  --line: #f2f3f3;
+  --soft: #f2f3f3;
+  --badge-bg: #eaf5f9;
+  --badge-fg: #1f6f88;
+  --badge-line: #cfe6ee;
+  --todo: #fff0a8;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--text);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Noto Sans SC", sans-serif;
+}
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ---- draft helpers (delete with the banner before publishing) ---- */
+.draft-banner {
+  margin: 0;
+  padding: 6px 16px;
+  text-align: center;
+  font-size: 13px;
+  background: #fffbe0;
+  border-bottom: 1px solid #f1e6a6;
+  color: #6b5d00;
+}
+.todo {
+  background: var(--todo);
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px var(--todo);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* ---- masthead ---- */
+.masthead { background: #fff; border-bottom: 1px solid var(--line); }
+.masthead-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 44px;
+}
+.site-title { font-weight: 700; font-size: 18px; color: var(--text); }
+.site-title:hover { text-decoration: none; }
+.masthead nav { display: flex; gap: 28px; }
+.masthead nav a { color: var(--muted); font-size: 17px; }
+.masthead nav a:hover { color: var(--text); text-decoration: none; }
+
+/* ---- two-column layout ---- */
+.layout {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 36px 20px 24px;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---- profile column ---- */
+.sidebar { position: sticky; top: 24px; }
+.avatar {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #e9edf0;
+}
+.author-name { margin: 18px 0 4px; font-size: 18px; line-height: 1.3; }
+.author-bio { margin: 0 0 14px; font-size: 13.5px; line-height: 1.45; }
+.author-links { list-style: none; margin: 0; padding: 0; font-size: 13.5px; }
+.author-links li { display: flex; align-items: center; gap: 8px; margin: 7px 0; }
+.author-links a { color: var(--text); }
+.author-links a:hover { color: var(--link); text-decoration: none; }
+.icon {
+  width: 15px;
+  height: 15px;
+  flex: none;
+  color: var(--muted);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---- main column ---- */
+.content h2 {
+  margin: 2.2em 0 .7em;
+  padding-bottom: .25em;
+  border-bottom: 1px solid var(--line);
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+.content section:first-child h2 { margin-top: 0; }
+.content h3 { margin: 1.6em 0 .8em; font-size: 1.05rem; color: var(--muted); font-weight: 600; letter-spacing: .02em; }
+.content p { margin: 0 0 1em; }
+.content ul { margin: 0 0 1em; padding-left: 1.3em; }
+.content li { margin: .35em 0; }
+.content a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+
+/* publications */
+.content .pubs { list-style: none; margin: 0; padding: 0; }
+.pub {
+  display: grid;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 0 16px;
+  margin: 0 0 22px;
+}
+.venue {
+  justify-self: start;
+  align-self: start;
+  max-width: 100%;
+  margin-top: 2px;
+  padding: 2px 8px;
+  border: 1px solid var(--badge-line);
+  border-radius: 4px;
+  background: var(--badge-bg);
+  color: var(--badge-fg);
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.content .pub p { margin: 0; }
+.pub-title { font-weight: 600; }
+.pub-title a { color: var(--text); }
+.pub-title a:hover { color: var(--link); }
+.pub-authors, .pub-meta { margin-top: 2px !important; font-size: 14.5px; color: var(--muted); }
+.pub-authors strong { color: var(--text); }
+.content .pub-note { margin: -.3em 0 1em; font-size: 13.5px; color: var(--muted); }
+.content .pub .pub-role { margin-top: 4px; font-size: 14.5px; line-height: 1.5; }
+
+/* experience / education */
+.entry { margin: 0 0 1em; }
+.content .entry p { margin: 0; }
+.entry-sub { color: var(--muted); }
+.content ul.plain { list-style: none; padding: 0; }
+
+/* ---- footer ---- */
+.site-footer {
+  margin-top: 48px;
+  padding: 20px 0;
+  background: var(--soft);
+  border-top: 1px solid #e6e8e9;
+  color: var(--muted);
+  font-size: 13px;
+}
+.site-footer p { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+/* ---- small screens: profile block goes on top ---- */
+@media (max-width: 760px) {
+  .masthead nav { display: none; }
+  .layout { grid-template-columns: 1fr; gap: 12px; padding: 20px 16px 8px; }
+  .sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    column-gap: 16px;
+    align-items: center;
+  }
+  .avatar { grid-row: 1 / span 2; width: 92px; }
+  .author-name { margin: 0 0 2px; align-self: end; }
+  .author-bio { margin: 0; align-self: start; }
+  .author-links { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 2px 18px; margin-top: 14px; }
+  .author-links li { margin: 4px 0; }
+  .pub { grid-template-columns: 1fr; }
+  .venue { margin: 0 0 6px; }
+  .content h2 { font-size: 1.45rem; }
+}
